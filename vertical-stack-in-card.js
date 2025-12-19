@@ -9,6 +9,10 @@ class VerticalStackInCard extends HTMLElement {
     super();
   }
 
+  get updateComplete() {
+    return this._cardSize.promise;
+  }
+
   setConfig(config) {
     this._cardSize = {};
     this._cardSize.promise = new Promise(
@@ -192,10 +196,10 @@ class VerticalStackInCard extends HTMLElement {
   }
 }
 
-customElements.define('vertical-stack-in-card', VerticalStackInCard);
+customElements.define('stack-in-card', VerticalStackInCard);
 window.customCards = window.customCards || [];
 window.customCards.push({
-  type: 'vertical-stack-in-card',
+  type: 'stack-in-card',
   name: 'Vertical Stack In Card',
   description: 'Group multiple cards into a single sleek card.',
   preview: false,
